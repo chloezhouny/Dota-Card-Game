@@ -19,22 +19,23 @@ button
 	position: relative;
 	width: 500px;
 	left: 1000px;
-	bottom: 300px;
+	bottom: 600px;
 }
 
 #selectArea div
 {
 	float: left;
 	width: 150px;
-
 }
 
-#enemiesArea
+
+#enemiesDiv
 {
 	clear: both;
+	width: 600px;
 }
 
-#selectArea div
+#enemiesDiv div
 {
 	float: left;
 	width: 150px;
