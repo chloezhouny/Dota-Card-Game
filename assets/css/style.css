@@ -1,0 +1,47 @@
+body
+{
+	background-image: url("../images/bg1.jpg");
+	background-size: 1000px 631.57px;
+	background-position: 50% 10%;
+	background-repeat:;
+	color: white;
+}
+
+button
+{
+	background-color: black;
+	color: white;
+	border: solid 1px black;
+}
+
+#defenderDiv
+{
+	position: relative;
+	width: 500px;
+	left: 1000px;
+	bottom: 300px;
+}
+
+#selectArea div
+{
+	float: left;
+	width: 150px;
+
+}
+
+#enemiesArea
+{
+	clear: both;
+}
+
+#selectArea div
+{
+	float: left;
+	width: 150px;
+}
+
+
+img
+{
+	width: 100%;
+}
