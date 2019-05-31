@@ -3,29 +3,32 @@ body
 	background-image: url("../images/bg1.jpg");
 	background-size: 1000px 631.57px;
 	background-position: 50% 10%;
-	background-repeat:;
 	color: white;
 }
 
-button
+.character
 {
-	background-color: black;
+	width: 150px;
+	z-index: 20;
 	color: white;
-	border: solid 1px black;
+	background-color: black;
+	float: left;
+}
+
+#selectArea
+{
+	height: 200px;
 }
 
 #defenderDiv
 {
 	position: relative;
-	width: 500px;
-	left: 1000px;
-	bottom: 600px;
+	width: 400px;
 }
 
-#selectArea div
+#myCharacterArea
 {
-	float: left;
-	width: 150px;
+	width: 400px;
 }
 
 
@@ -41,8 +44,22 @@ button
 	width: 150px;
 }
 
+#fightSection
+{
+	display: flex;
+	position: relative;
+	left: 100px;
+}
 
 img
 {
 	width: 100%;
+}
+
+#score0 #score1 #score2 #score3
+{
+	width: 100%;
+	color: white;
+	clear: both;
+	height: 10%;
 }
