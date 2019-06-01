@@ -10,52 +10,55 @@
     <link rel="stylesheet" href="assets/css/reset.css">
    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/css/uikit.min.css" />
 
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+HK|Oswald|Roboto+Slab&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Roboto+Condensed&display=swap" rel="stylesheet">
+
+
 
 </head>
 <body>
 	<main>
-		<div class = "container-fluid">
+		<div class = "container-fluid content">
 <!-------------------- Select Scene --------------------------------------->
 
-			<div id = "selectArea" class = "row d-flex justify-content-center m-t-4 p-t-4">
+			<div id = "selectArea" class = " row d-flex justify-content-center">
 			</div>
 
 			<div id = "enemiesDiv">
-				<h3>Enemies available to attack</h3>
 				<div id = "enemiesArea">
 				</div>
 			</div>
 
-			<div id = "fightSection">
-				<div id = "myCharacterDiv">
-					<h3>My Character</h3>
-					<div id = "myCharacterArea" ></div>
-
-				</div>
-				<div id = "defenderDiv">
-					<h3 >Defender</h3>
-					<div id = "defenderArea" ></div>
-				</div>
-
-				<div>
-					<button id="attack">Attack</button>
-					<button id="restart">Restart</button>
-				</div>
-				<div id= "resultArea">
-				</div>
+			<div id = "defenderDiv">
+				<h3 >Defender</h3>
 			</div>
-		</div>
+
+			<button id="restart">RESTART</button>
+			<button id="start">START BATTLE</button>
+		
+
+			<div id = "myCharacterDiv">
+			</div>
+			<div id="attack"></div>
+
+			
+			<div id= "resultDiv"> Choose your hero.		
+			</div>
 		
 	</main>
-<footer>
-		<iframe width="1%" height="3" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/281077371&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+	<footer>
+		<iframe width="1%" height="3" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/793839030&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
 	</footer>
 
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit-icons.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="assets/javascript/game.js">
+
 		
 
 	</script>

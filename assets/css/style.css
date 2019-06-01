@@ -1,16 +1,29 @@
 body
 {
+	margin: 0;
+	padding: 0;
 	background-image: url("../images/bg.jpg");
-	background-size: 1499.5px 738.5px;
-	background-position: 20% 20%;
+	background-size:112% auto;
 	color: white;
+	height: 100%;
+	font-family: 'Roboto Condensed', sans-serif;
+	z-index: -2;
+}
+
+html
+{
 	height: 100vh;
-	font-family: 'Noto Sans HK', sans-serif;
 }
 
 main
 {
 	height: 100%;
+}
+
+.content
+{
+	height: 100%;
+	position: relative;
 }
 
 .container
@@ -21,15 +34,15 @@ main
 /* Select Scene */
 #selectArea
 {
-	margin-top: 100px;
 	float: center;
+	padding-top: 100px;
 
 }
 
 .character
 {
 	width: 203.33px;
-	height: 340px;
+	height: 330px;
 	color: white;
 	background-color: black;
 	padding: 0;
@@ -41,7 +54,7 @@ main
   	outline: none;
   	border: 1px solid #3E5567;
   	background-image: linear-gradient(to bottom right, #3E5567, #181D23);
-	
+
 
 }
 
@@ -49,7 +62,7 @@ main
 #c0:hover
 {
 	box-shadow: 0 0 40px rgba(209, 87, 62, 1);
-	border: 1px solid rgba(209, 87, 6, 1);
+	border: 1px solid rgba(209, 87, 62, 1);
 }
 
 #c1:hover
@@ -80,11 +93,13 @@ main
 	justify-content: space-around;
 }
 
-#attackPower
+.attackPower
 {
 	position: relative;
 	bottom: 4px;
-	right: 14px;
+	right: 12px;
+	margin-left: 0;
+
 	color: transparent;
 	text-shadow: 0 0 0 white;
 }
@@ -107,25 +122,44 @@ main
 
 }
 
+
+/* After Selection */
+
+
 #defenderDiv
 {
-	width: 400px;
+	position: relative;
+	padding: 0;
+	width: 203.33px;
+	height: 330px;
+	margin: 0 auto;
+
 }
 
-#myCharacterArea
+#myCharacterDiv
 {
-	width: 400px;
+	position: relative;
+	width: 203.33px;
+	padding: 0;
+	margin: 0 auto;
+	top: 450px;
+	clear: both;
 }
 
 
 #enemiesDiv
 {
-	width: 600px;
+	width: 670px;
+	display: flex;
+	margin: 0 auto;
+	position: absolute;
 }
 
-#enemiesDiv div
+
+.enemies
 {
-	width: 150px;
+	justify-content: center;
+	float: left;
 }
 
 
@@ -137,10 +171,87 @@ img
 	margin-top: 25px;
 }
 
+
+#attack
+{
+	position: relative;
+	left: 1200px;
+	bottom: 200px;
+	border-radius: 50%;
+	width: 150px;
+	height: 150px;
+	box-shadow: 0 0 40px rgba(1,36,6, 1);
+	border: 1px solid rgba(1,36,6, 1);
+	color: transparent;
+	text-align: center;
+	text-shadow: 0 0 0 white;
+	background-repeat: no-repeat;
+	background-image: linear-gradient(#3E5567, #181D23);
+	background-size: 95%, auto;
+	background-position: right bottom;
 }
-#score0 #score1 #score2 #score3
+
+
+
+#start
+{
+	position: fixed;
+	left: 1200px;
+	top: 700px;
+	border-radius: 2%;
+	width: 200px;
+	height: 40px;
+	color: white;
+	font-weight: bold;
+	background-image: linear-gradient(#00A918, #02560E);
+	box-shadow: 0 0 20px rgba(1,36,6, 1);
+	border: 1px solid rgba(1, 36, 6, 1);
+	letter-spacing: 2px;
+	-webkit-transition: all 0.30s ease-in-out;
+  	-moz-transition: all 0.30s ease-in-out;
+  	-ms-transition: all 0.30s ease-in-out;
+  	-o-transition: all 0.30s ease-in-out;
+
+}
+
+#start:hover
+{
+	box-shadow: 0 0 100px rgba(1,36,6, 1);
+	border: 1px solid rgba(1,36,6, 1);
+}
+
+#resultDiv
+{
+	position: absolute;
+	bottom: 100px;
+	left: 900px;
+	font-size: 18px;
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+
+#resultDiv h3
 {
 	color: white;
-	clear: both;
-	height: auto;
+	font-size: 18px;
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+
+#restart
+{
+	position: fixed;
+	left: 1200px;
+	top: 700px;
+	border-radius: 2%;
+	width: 200px;
+	height: 40px;
+	color: white;
+	font-weight: bold;
+	background-image: linear-gradient(#00A918, #02560E);
+	box-shadow: 0 0 20px rgba(1,36,6, 1);
+	border: 1px solid rgba(1, 36, 6, 1);
+	letter-spacing: 2px;
+	-webkit-transition: all 0.30s ease-in-out;
+  	-moz-transition: all 0.30s ease-in-out;
+  	-ms-transition: all 0.30s ease-in-out;
+  	-o-transition: all 0.30s ease-in-out;
 }
