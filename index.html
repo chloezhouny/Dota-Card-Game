@@ -2,223 +2,61 @@
 <html>
 <head>
 	<title>RPG Game</title>
-	
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/reset.css">
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+HK|Oswald|Roboto+Slab&display=swap" rel="stylesheet">
 
 </head>
 <body>
 	<main>
-		<div id = "selectArea">
-		</div>
+		<div class = "container-fluid">
+<!-------------------- Select Scene --------------------------------------->
 
-		<div id = "enemiesDiv">
-			<h3>Enemies available to attack</h3>
-			<div id = "enemiesArea">
+			<div id = "selectArea" class = "row d-flex justify-content-center m-t-4 p-t-4">
+			</div>
+
+			<div id = "enemiesDiv">
+				<h3>Enemies available to attack</h3>
+				<div id = "enemiesArea">
+				</div>
+			</div>
+
+			<div id = "fightSection">
+				<div id = "myCharacterDiv">
+					<h3>My Character</h3>
+					<div id = "myCharacterArea" ></div>
+
+				</div>
+				<div id = "defenderDiv">
+					<h3 >Defender</h3>
+					<div id = "defenderArea" ></div>
+				</div>
+
+				<div>
+					<button id="attack">Attack</button>
+					<button id="restart">Restart</button>
+				</div>
+				<div id= "resultArea">
+				</div>
 			</div>
 		</div>
-
-		<div id = "fightSection">
-			<div id = "myCharacterDiv">
-				<h3>My Character</h3>
-				<div id = "myCharacterArea" ></div>
-
-			</div>
-			<div id = "defenderDiv">
-				<h3 >Defender</h3>
-				<div id = "defenderArea" ></div>
-			</div>
-
-			<div>
-				<button id="attack">Attack</button>
-				<button id="restart">Restart</button>
-			</div>
-			<div id= "resultArea">
-			</div>
-		</div>
-
 		
 	</main>
-	<!--<footer>
+<footer>
 		<iframe width="1%" height="3" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/281077371&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-	</footer> -->
+	</footer>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script>
-			var imgArr = ["assets/images/chaos.gif", "assets/images/invoker.gif", "assets/images/dp.gif", "assets/images/enigma.gif"];
-			var charIdArr = ["c0", "c1", "c2","c3"];
-			var scoreIdArr = ["score0", "score1", "score2", "score3"];
-
-			var myCharacter;
-			var myCharacterScore;
-			var myCharacterPicked;
-			var defender;
-			var defeatedCount;
-			var defenderPicked;
-
-			var c0;
-			var c1;
-			var c2;
-			var c3;
-			var characterArr; 
-
-
-		function startGame()
-		{
-			myCharacterPicked = 0;
-			defender = "";
-			defeatedCount = 0;
-			defenderPicked = 0;
-
-			c0 = 
-			{
-				name: "one",
-				healthPoint: 100,
-				attackPower: 5,
-				counterPower: 5,
-				defeatedStatus: false,
-				id: "#c0",
-				scoreId: "#score0"
-			}
-
-			c1 = 
-			{
-				name: "two",
-				healthPoint: 100,
-				attackPower: 5,
-				counterPower: 5,
-				defeatedStatus: false,
-				id: "#c1",
-				scoreId: "#score1"
-			}
-
-			c2 = 
-			{
-				name: "three",
-				healthPoint: 100,
-				attackPower: 5,
-				counterPower: 5,
-				defeatedStatus: false,
-				id: "#c2",
-				scoreId: "#score2"
-			}
-
-			c3 = 
-			{
-				name: "four",
-				healthPoint: 100,
-				attackPower: 5,
-				counterPower: 5,
-				defeatedStatus: false,
-				id: "#c3",
-				scoreId: "#score3"
-			}
-
-
-			characterArr = [c0, c1, c2, c3];
-
-			for (var i = 0; i < characterArr.length; i++)
-			{
-				var characterBtn = $("<div></div>");
-
-				characterBtn.addClass("character");
-				characterBtn.attr('id', charIdArr[i]);
-				characterBtn.val(i);
-				characterBtn.append("<img src=" + imgArr[i] + ">");
-				$("#selectArea").append(characterBtn);
-
-				var scoreSpan = $("<div></div>");
-				scoreSpan.attr('id', scoreIdArr[i]);
-				scoreSpan.html("<br>" + characterArr[i].healthPoint);
-				characterBtn.append(scoreSpan);
-			}
-
-			$(".character").on("click", function()
-			{
-				console.log(myCharacterPicked);
-				if (myCharacterPicked === 0)
-				{
-					myCharacter = parseInt($(this).val());
-					$("#myCharacterArea").append($(this));
-					for (var i = 0; i < characterArr.length; i ++)
-					{
-						if (i !== myCharacter) {
-							$("#enemiesArea").append($(characterArr[i].id));
-						}
-					}
-					myCharacterPicked = 1;
-				}
-
-				else if (parseInt($(this).val())!== myCharacter && defenderPicked === 0)
-				{
-
-					defender = parseInt($(this).val());
-					$("#defenderArea").html($(this));
-					$(this).attr("width", "400px")
-					defenderPicked ++;
-				}
-			})
-		}
+	<script src="assets/javascript/game.js">
 		
-
-		startGame();
-
-
-		$("#restart").on("click", function()
-		{
-			$("#myCharacterArea").empty();
-			$("#resultArea").empty();
-			$("#selectArea").empty();
-			$("#enemiesArea").empty();
-			console.log($("#myCharacterArea"));
-			startGame();
-		})
-
-
-		$("#attack").on("click", function()
-		{
-			if(characterArr[defender].defeatedStatus === true && defeatedCount < 3)
-			{
-				$("#resultArea").html("No enemy to attack");
-			}
-			if(characterArr[defender].healthPoint > 0 && characterArr[myCharacter].healthPoint > 0)
-			{
-				$("#resultArea").html("");
-				characterArr[myCharacter].healthPoint -= characterArr[defender].counterPower;
-				characterArr[defender].healthPoint -= characterArr[myCharacter].attackPower;
-				
-
-				$(characterArr[myCharacter].scoreId).html("<br>" + characterArr[myCharacter].healthPoint);
-				$(characterArr[defender].scoreId).html("<br>" + characterArr[defender].healthPoint);
-
-
-				if(characterArr[defender].healthPoint > 0 && characterArr[myCharacter].healthPoint > 0)
-				{
-					$("#resultArea").append("<h3> You attacked " + characterArr[defender].name + " for " + characterArr[myCharacter].attackPower + " damage. <br>");
-					$("#resultArea").append(characterArr[defender].name + " attacked you back for " + characterArr[defender].counterPower+ " damage. ")
-				}
-
-
-				if(characterArr[defender].healthPoint < 0 && defeatedCount < 3)
-				{
-					$("#resultArea").append("<h3> You have defeated " + characterArr[defender].name + ", you can choose to fight another enemy");
-					$("#defenderArea").html("");
-					characterArr[defender].defeatedStatus = true;
-					defeatedCount ++;
-					defenderPicked = 0;
-					if(defeatedCount >= 3)
-					{
-						$("#resultArea").html("Your won! !! Game over!!");
-					}
-				}
-
-				characterArr[myCharacter].attackPower += characterArr[myCharacter].attackPower;
-			}
-		})
-
-	
-
 
 	</script>
 

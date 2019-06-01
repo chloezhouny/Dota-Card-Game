@@ -1,28 +1,114 @@
 body
 {
-	background-image: url("../images/bg1.jpg");
-	background-size: 1000px 631.57px;
-	background-position: 50% 10%;
+	background-image: url("../images/bg.jpg");
+	background-size: 1499.5px 738.5px;
+	background-position: 20% 20%;
 	color: white;
+	height: 100vh;
+	font-family: 'Noto Sans HK', sans-serif;
+}
+
+main
+{
+	height: 100%;
+}
+
+.container
+{
+	height: 100%;
+}
+
+/* Select Scene */
+#selectArea
+{
+	margin-top: 100px;
+	float: center;
+
 }
 
 .character
 {
-	width: 150px;
-	z-index: 20;
+	width: 203.33px;
+	height: 340px;
 	color: white;
 	background-color: black;
-	float: left;
+	padding: 0;
+	margin: 10px;
+	-webkit-transition: all 0.30s ease-in-out;
+  	-moz-transition: all 0.30s ease-in-out;
+  	-ms-transition: all 0.30s ease-in-out;
+  	-o-transition: all 0.30s ease-in-out;
+  	outline: none;
+  	border: 1px solid #3E5567;
+  	background-image: linear-gradient(to bottom right, #3E5567, #181D23);
+	
+
 }
 
-#selectArea
+
+#c0:hover
 {
-	height: 200px;
+	box-shadow: 0 0 40px rgba(209, 87, 62, 1);
+	border: 1px solid rgba(209, 87, 6, 1);
+}
+
+#c1:hover
+{
+	box-shadow: 0 0 35px rgba(245, 205, 117, 1);
+	border: 1px solid rgba(245, 205, 117, 1);
+}
+#c2:hover
+{
+	box-shadow: 0 0 35px rgba(102, 187, 6, 1);
+	border: 1px solid rgba(102, 187, 6, 1);
+}
+#c3:hover
+{
+	box-shadow: 0 0 40px rgba(137, 82, 255, 1);
+	border: 1px solid rgba(137, 82, 255, 1);
+}
+
+
+#name
+{
+	margin-top: 3px;
+}
+
+#pointSpan
+{
+	display: flex;
+	justify-content: space-around;
+}
+
+#attackPower
+{
+	position: relative;
+	bottom: 4px;
+	right: 14px;
+	color: transparent;
+	text-shadow: 0 0 0 white;
+}
+
+.healthPoint
+{
+	position: relative;
+	left: 15px;
+	top: 20px;
+	color: transparent;
+	text-shadow: 0 0 0 white;
+
+}
+
+#miniImg
+{
+	width: 30px;
+	height: auto;
+	margin-top: 0;
+
 }
 
 #defenderDiv
 {
-	position: relative;
 	width: 400px;
 }
 
@@ -34,32 +120,27 @@ body
 
 #enemiesDiv
 {
-	clear: both;
 	width: 600px;
 }
 
 #enemiesDiv div
 {
-	float: left;
 	width: 150px;
 }
 
-#fightSection
-{
-	display: flex;
-	position: relative;
-	left: 100px;
-}
 
 img
 {
 	width: 100%;
+	height: 204.66px;
+	margin: 0;
+	margin-top: 25px;
 }
 
+}
 #score0 #score1 #score2 #score3
 {
-	width: 100%;
 	color: white;
 	clear: both;
-	height: 10%;
+	height: auto;
 }
