@@ -177,6 +177,8 @@
 					$("#resultDiv").html("Press button on the right to start your battle.");
 				}
 
+					$("#enemiesDiv").hide();
+
 
 				$(this).css("box-shadow", borderColor[defender]);
 				$(this).css('margin', '0');
@@ -225,7 +227,6 @@ $("#attack").hide();
 		if(defenderPicked === 1)
 		{
 			$("#enemiesDiv").css("right", "700px");	
-			$("#enemiesDiv").show();
 			$("#resultDiv").html("Attack your enemy.");					
 			$("#attack").show();
 			$("body").css("background-image", "url('assets/images/bg3.jpg')");
