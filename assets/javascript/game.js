@@ -324,10 +324,14 @@ $(document).ready(function() {
 	{
 		$("#myCharacterDiv").empty();
 		$("#defenderDiv").empty();
+		$("#defenderDiv").css("top","");
 		$("#resultDiv").empty();
 		$("#selectArea").empty();
+		$("#selectArea").css("padding-top", "100px");
 		$("#enemiesDiv").empty();
+		$("#enemiesDiv").css({'margin-left': '', 'margin-bottom':'', 'right':''});
 		$("#attack").empty();
+		$("#attack").css({'top':'', 'background-image':'', 'z-index':''});
 		$("#attack").hide();
 		$("#restart").hide();
 		$("body").css("background-image", "url('assets/images/bg.jpg')");
@@ -337,8 +341,11 @@ $(document).ready(function() {
 		startGame();
 		$("#enemiesDiv").hide();
 		$("#myCharacterDiv").hide();
+		$("#myCharacterDiv").css("top", "");
 		$("#defenderDiv").hide();
 		$("#restart").hide();
+
+
 
 
 
