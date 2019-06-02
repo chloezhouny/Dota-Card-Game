@@ -133,7 +133,7 @@ $(document).ready(function() {
 				$("#selectArea").css("padding-top", "0px")
 
 				$("#enemiesDiv").show();
-				$("#enemiesDiv").css("margin-left", "370px");
+				$("#enemiesDiv").css("margin-left", "345px");
 				$("#enemiesDiv").css("margin-bottom", "300px");
 				$("#myCharacterDiv").show();
 				myCharacter = parseInt($(this).val());
