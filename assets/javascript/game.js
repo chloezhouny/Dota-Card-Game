@@ -146,8 +146,7 @@
 				$("#myCharacterDiv").append($(this));
 
 				$(this).css("box-shadow", borderColor[myCharacter]);
-				$("#attack").css("background-image", attackImgArr[myCharacter]);
-				$("#attack").hide();
+				
 				$("#enemiesDiv").addClass("uk-animation-slide-bottom-small");
 
 
@@ -208,14 +207,12 @@
 
 
 /* Hero Selection Scene */
-$("#attack").hide();
 	$("#start").show();
 	startGame();
 	console.log($("#myCharcterDiv"));
 	$("#enemiesDiv").hide();
 	$("#myCharacterDiv").hide();
 	$("#defenderDiv").hide();
-	$("#attack").hide();
 	$("#restart").hide();
 
 
@@ -228,11 +225,14 @@ $("#attack").hide();
 		{
 			$("#enemiesDiv").css("right", "700px");	
 			$("#resultDiv").html("Attack your enemy.");					
-			$("#attack").show();
 			$("body").css("background-image", "url('assets/images/bg3.jpg')");
 			$("body").css("background-size", "100% auto");
 			$("#start").hide();
+			$("#attack").css("background-image", attackImgArr[myCharacter]);
+			$("#attack").css("z-index", "2");
 			$("#attack").show();
+
+
 
 		}
 	})
@@ -336,7 +336,6 @@ $("#attack").hide();
 		$("#enemiesDiv").hide();
 		$("#myCharacterDiv").hide();
 		$("#defenderDiv").hide();
-		$("#attack").hide();
 		$("#restart").hide();
 
 

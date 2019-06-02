@@ -189,6 +189,7 @@ img
 	background-image: linear-gradient(#3E5567, #181D23);
 	background-size: 95%, auto;
 	background-position: right bottom;
+	z-index: -1;
 }
 
 
