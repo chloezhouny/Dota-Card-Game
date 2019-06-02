@@ -8,6 +8,7 @@
 	var charIdArr = ["c0", "c1", "c2","c3"];
 	var pointIdArr = ["p0", "p1", "p2", "p3"];
 	var attackIdArr = ["a0", "a1", "a2", "a3"];
+	var attackCount = 0;
 
 	var myCharacter;
 	var myCharacterScore;
@@ -37,8 +38,8 @@
 		{
 			name: "Shadow Fiend",
 			healthPoint: 130,
-			attackPower: 30,
-			attackBase: 30,
+			attackPower: 36,
+			attackBase: 36,
 			counterPower: 20,
 			defeatedStatus: false,
 			id: "#c0",
@@ -136,11 +137,19 @@
 				$("#enemiesDiv").css("margin-bottom", "300px");
 				$("#myCharacterDiv").show();
 				myCharacter = parseInt($(this).val());
+				$("#myCharacterDiv").addClass("uk-animation-shake uk-animation-fast");
+				setTimeout(function()
+				{
+					$("#myCharacterDiv").removeClass("uk-animation-shake uk-animation-fast");
+				}, 2000);
 
 				$("#myCharacterDiv").append($(this));
+
 				$(this).css("box-shadow", borderColor[myCharacter]);
 				$("#attack").css("background-image", attackImgArr[myCharacter]);
 				$("#attack").hide();
+				$("#enemiesDiv").addClass("uk-animation-slide-bottom-small");
+
 
 				for (var i = 0; i < characterArr.length; i ++)
 				{
@@ -160,19 +169,27 @@
 
 			else if (parseInt($(this).val())!== myCharacter && defenderPicked === 0)
 			{
-
 				defender = parseInt($(this).val());
+				$("#enemiesDiv").addClass("uk-animation-slide-right-small");
 				if(defeatedCount === 0)
 				{
 					$("#enemiesDiv").css("margin-left", "55px");
+					$("#resultDiv").html("Press button on the right to start your battle.");
 				}
+
+
 				$(this).css("box-shadow", borderColor[defender]);
 				$(this).css('margin', '0');
 				$("#defenderDiv").show();
+				$("#defenderDiv").addClass("uk-animation-shake uk-animation-fast");
+				setTimeout(function()
+				{
+					$("#defenderDiv").removeClass("uk-animation-shake uk-animation-fast");
+				}, 1000);
 				$("#defenderDiv").css("top", "10px");
 				$("#defenderDiv").html($(this));
 				$("#attack").css("top", "-200px");
-				$("#resultDiv").html("Press button on the right to start your battle.");		
+						
 
 				$(this).attr("width", "400px");
 				defenderPicked ++;
@@ -230,6 +247,23 @@ $("#attack").hide();
 		}
 		if(characterArr[defender].healthPoint > 0 && characterArr[myCharacter].healthPoint > 0)
 		{
+			if (attackCount >= 0)
+			{
+	
+				$(characterArr[defender].id).addClass("uk-animation-shake");
+				setTimeout(function()
+				{
+					$(characterArr[defender].id).removeClass("uk-animation-shake");
+				}, 500);
+				
+
+				$(characterArr[myCharacter].id).addClass("uk-animation-slide-top-medium");
+				setTimeout(function()
+				{
+					$(characterArr[myCharacter].id).removeClass("uk-animation-slide-top-medium");
+				}, 500);				
+			}		
+
 			$("#resultDiv").html("");
 			characterArr[myCharacter].healthPoint -= characterArr[defender].counterPower;
 			characterArr[defender].healthPoint -= characterArr[myCharacter].attackPower;
@@ -237,13 +271,15 @@ $("#attack").hide();
 			if(characterArr[defender].healthPoint > 0 && characterArr[myCharacter].healthPoint > 0)
 			{
 				$("#resultDiv").html("<h3> You attacked " + characterArr[defender].name + " for " + characterArr[myCharacter].attackPower + " damage. <br>");
-				$("#resultDiv").append(characterArr[defender].name + " attacked you back for " + characterArr[defender].counterPower+ " damage. ")
+				$("#resultDiv").append(characterArr[defender].name + " attacked you back for " + characterArr[defender].counterPower+ " damage. ");
+				attackCount ++;
 			}
 
 
 			if(characterArr[defender].healthPoint <= 0 && defeatedCount < 3)
 			{
 				$("#resultDiv").html("<h3> You have defeated " + characterArr[defender].name + "! <br>");
+
 				$("#resultDiv").append("Choose to fight another enemy.")
 				$("#enemiesDiv").show();
 				$("#defenderDiv").html("");
@@ -260,6 +296,7 @@ $("#attack").hide();
 					$("#restart").show();
 
 				}
+				attackCount = 0;
 			}
 
 			if(characterArr[myCharacter].healthPoint < 0)
@@ -267,6 +304,7 @@ $("#attack").hide();
 				$("#resultDiv").html("<h3> Your lose! !! Game over!! </h3>");
 				$("#attack").hide();
 				$("#restart").show();
+				attackCount = 0;
 			}
 
 			characterArr[myCharacter].attackPower += characterArr[myCharacter].attackBase;
@@ -274,6 +312,7 @@ $("#attack").hide();
 
 			$(characterArr[myCharacter].pointId).html("<div> ♥" + characterArr[myCharacter].healthPoint + "<div>");
 			$(characterArr[defender].pointId).html("<div> ♥" + characterArr[defender].healthPoint + "<div>");
+
 		}
 	})
 
