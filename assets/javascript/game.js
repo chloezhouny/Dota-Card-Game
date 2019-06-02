@@ -1,5 +1,5 @@
 
-
+$(document).ready(function() {
 	var imgArr = ["assets/images/sf.gif", "assets/images/pheonix.gif", "assets/images/windrunner.gif", "assets/images/enigma.gif"];
 	var miniImgArr = ["assets/images/mini0.png", "assets/images/mini1.png", "assets/images/mini2.png", "assets/images/mini3.png" ];
 	var borderColor = ["0 0 40px rgba(209, 87, 62, 1)", "0 0 40px rgba(245, 205, 117, 1)", "0 0 40px rgba(102, 187, 6, 1)", "0 0 40px rgba(137, 82, 255, 1)"];
@@ -207,6 +207,7 @@
 
 
 /* Hero Selection Scene */
+	$("#attack").hide();
 	$("#start").show();
 	startGame();
 	console.log($("#myCharcterDiv"));
@@ -327,6 +328,7 @@
 		$("#selectArea").empty();
 		$("#enemiesDiv").empty();
 		$("#attack").empty();
+		$("#attack").hide();
 		$("#restart").hide();
 		$("body").css("background-image", "url('assets/images/bg.jpg')");
 		$("body").css("background-size", "112% auto");
@@ -339,5 +341,6 @@
 		$("#restart").hide();
 
 
-	})
 
+	})
+})
