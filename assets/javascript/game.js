@@ -133,7 +133,7 @@ $(document).ready(function() {
 				$("#selectArea").css("padding-top", "0px")
 
 				$("#enemiesDiv").show();
-				$("#enemiesDiv").css("margin-left", "345px");
+				$("#enemiesDiv").css("margin-left", "365px");
 				$("#enemiesDiv").css("margin-bottom", "300px");
 				$("#myCharacterDiv").show();
 				myCharacter = parseInt($(this).val());
@@ -301,7 +301,7 @@ $(document).ready(function() {
 				attackCount = 0;
 			}
 
-			if(characterArr[myCharacter].healthPoint < 0)
+			if(characterArr[myCharacter].healthPoint <= 0)
 			{
 				$("#resultDiv").html("<h3> Your lose! !! Game over!! </h3>");
 				$("#attack").hide();
