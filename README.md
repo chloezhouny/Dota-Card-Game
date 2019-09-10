@@ -1,7 +1,7 @@
 # unit-4-game
 
 This project builds a RPG card game with Jquery library. The player will choose a hero and fight as that hero for the rest of the game. To win the game the player must defeat all the remaining opponents. Trick is to pick the right enemies, not choosing the strongest player. 
-Deployed link: https://chloezhouny.github.io/unit-4-game/
+Deployed link: https://chloezhouny.github.io/Dota-Card-Game/
 <br>
 
 #### Demo 
